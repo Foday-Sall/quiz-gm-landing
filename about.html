@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us | Quiz Gm</title>
+<meta name="description" content="Quiz Gm: built in The Gambia for every exam student. Our story, our values, and the people behind it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/pages.css">
+<style>
+.flag-badge{display:inline-flex;align-items:center;gap:10px;background:var(--card);border:2px solid var(--border);border-radius:999px;padding:10px 14px;box-shadow:0 3px 0 var(--border);margin-bottom:18px}
+.gm-flag{width:34px;height:23px;border-radius:4px;box-shadow:0 1px 3px rgba(30,27,75,.25);flex:0 0 auto;display:block}
+.chip .gm-flag{width:22px;height:15px}
+.foot .gm-flag{width:20px;height:14px;vertical-align:-2px;margin-left:6px;border-radius:2px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;text-align:left}
+.hero-grid .hero-copy{text-align:left}
+.hero-grid .lead{margin:0 0 6px}
+.hero-mascot{display:grid;place-items:center}
+.hero-mascot img{width:100%;max-width:380px;height:auto;border-radius:28px}
+@media (max-width:700px){
+  .hero-grid{grid-template-columns:1fr;gap:20px;text-align:center}
+  .hero-grid .hero-copy{text-align:center}
+  .hero-mascot img{max-width:240px}
+}
+.hero{padding:56px 0 40px;text-align:center}
+.hero h1{font-size:clamp(30px,5.5vw,46px);line-height:1.15;margin-bottom:14px}
+.hero h1 .accent{color:var(--primary)}
+.hero p.lead{max-width:640px;margin:0 auto;color:var(--muted-fg);font-size:clamp(16px,2.5vw,19px)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px auto 0}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:2px solid var(--border);border-radius:999px;padding:8px 18px;font-weight:600;font-size:14.5px;color:var(--foreground);box-shadow:0 3px 0 var(--border)}
+.chip svg{width:18px;height:18px;color:var(--primary);flex:none}
+.story{padding:36px 0}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:700px){.story-grid{grid-template-columns:1fr}}
+.story-card{padding:30px clamp(20px,4vw,34px)}
+.story-card h2{font-size:21px;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.story-card h2 svg{width:24px;height:24px;color:var(--accent);flex:none}
+.story-card p{color:var(--muted-fg);font-size:16px}
+.story-card p + p{margin-top:10px}
+.story-card strong{color:var(--foreground)}
+.values{padding:20px 0 44px}
+.values h2.section{font-size:clamp(24px,4vw,32px);text-align:center;margin-bottom:22px}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:700px){.values-grid{grid-template-columns:1fr}}
+.value-card{padding:26px 22px;text-align:center;transition:transform .18s ease}
+.value-card:hover{transform:translateY(-4px)}
+.value-icon{width:56px;height:56px;margin:0 auto 14px;border-radius:18px;display:grid;place-items:center;color:#fff}
+.value-icon svg{width:28px;height:28px}
+.value-icon.i1{background:linear-gradient(135deg,var(--primary),var(--secondary))}
+.value-icon.i2{background:linear-gradient(135deg,var(--accent),#FB923C)}
+.value-icon.i3{background:linear-gradient(135deg,var(--success),#4ADE80)}
+.value-card h3{font-size:18px;margin-bottom:6px}
+.value-card p{color:var(--muted-fg);font-size:15px}.foot .links{margin-top:6px}
+.foot .links a{margin:0 10px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="/">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 256 256" fill="currentColor"><path d="M176,88h-8V72a40,40,0,0,0-80,0V88H80a16,16,0,0,0-16,16v96a16,16,0,0,0,16,16h96a16,16,0,0,0,16-16V104A16,16,0,0,0,176,88ZM104,72a24,24,0,0,1,48,0V88H104Z"/></svg>
+      </span>
+      Quiz Gm
+    </a>
+    <a class="back-btn" href="/">Back to Quiz</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero container">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="flag-badge" title="Made in The Gambia"><svg class="gm-flag" viewBox="0 0 27 18" role="img" aria-label="Flag of The Gambia"><path fill="#fff" d="M0 0h27v18H0z"/><path fill="#ce1126" d="M0 0h27v6H0z"/><path fill="#0c1c8c" d="M0 7h27v4H0z"/><path fill="#3a7728" d="M0 12h27v6H0z"/></svg></span>
+        <h1>Built in The Gambia,<br><span class="accent">for every exam student</span></h1>
+        <p class="lead">Quiz Gm started with one question: why is exam prep here still a stack of photocopied papers and guesswork? We build the study buddy we wish we had.</p>
+        <div class="chips">
+          <span class="chip">
+            <svg class="gm-flag" viewBox="0 0 27 18" role="img" aria-label="Flag of The Gambia"><path fill="#fff" d="M0 0h27v18H0z"/><path fill="#ce1126" d="M0 0h27v6H0z"/><path fill="#0c1c8c" d="M0 7h27v4H0z"/><path fill="#3a7728" d="M0 12h27v6H0z"/></svg>
+            Your personal study AI
+          </span>
+          <span class="chip">
+            <svg aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M176,88h-8V72a40,40,0,0,0-80,0v16H80a16,16,0,0,0-16,16v96a16,16,0,0,0,16,16h96a16,16,0,0,0,16-16V104A16,16,0,0,0,176,88ZM104,72a24,24,0,0,1,48,0v16H104Z"/></svg>
+            WASSCE to university
+          </span>
+          <span class="chip">
+            <svg aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M232,128a8,8,0,0,1-8,8H48l80.48,80.48a8,8,0,0,1-11.32,11.32l-96-96a8,8,0,0,1,0-11.32l96-96a8,8,0,0,1,11.32,11.32L48,120H224A8,8,0,0,1,232,128Z"/></svg>
+            Free to start, always
+          </span>
+        </div>
+      </div>
+      <div class="hero-mascot">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/mascot@thumb.webp 160w, /assets/img/mascot@half.webp 320w, /assets/img/mascot.webp 640w, /assets/img/mascot@2x.webp 800w" sizes="(max-width: 700px) 240px, 380px">
+          <img src="/assets/img/mascot@half.webp" alt="Quiz Gm mascot: a thinking platypus wearing a Quiz Gm cap, holding a tablet with the Quiz Gm logo" width="380" height="380" decoding="async">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="story container">
+    <div class="story-grid">
+      <div class="story-card clay-card reveal">
+        <h2>
+          <svg aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm-16,72a8,8,0,0,1-8,8H72a8,8,0,0,1,0-16H184A8,8,0,0,1,192,104Zm0,48a8,8,0,0,1-8,8H72a8,8,0,0,1,0-16H184A8,8,0,0,1,192,152Z"/></svg>
+          Our story
+        </h2>
+        <p>Every year, thousands of students sit WASSCE with the same tools: shared past papers, incomplete syllabi, and a teacher's spare time that is stretched thin.</p>
+        <p><strong>Quiz Gm</strong> turns real past papers and your own course PDFs into a plan that learns how <strong>you</strong> answer: weak topics first, sharp ones on maintenance, marked the way examiners mark.</p>
+      </div>
+      <div class="story-card clay-card reveal">
+        <h2>
+          <svg aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm40,112H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h32a8,8,0,0,1,0,16Z"/></svg>
+          Why "learns you"
+        </h2>
+        <p>Two students never need the same revision. One loses marks on geometry, the other on comprehension. A single shared study timetable helps neither.</p>
+        <p>So the plan maps <strong>your</strong> diagnostic against the syllabus, rebuilds every week from what you missed, and ends exactly on exam week.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="values container">
+    <h2 class="section">What we stand for</h2>
+    <div class="values-grid">
+      <div class="value-card clay-card reveal">
+        <span class="value-icon i1" aria-hidden="true">
+          <svg viewBox="0 0 256 256" fill="currentColor"><path d="M176,88h-8V72a40,40,0,0,0-80,0v16H80a16,16,0,0,0-16,16v96a16,16,0,0,0,16,16h96a16,16,0,0,0,16-16V104A16,16,0,0,0,176,88ZM104,72a24,24,0,0,1,48,0v16H104Zm24,84a12,12,0,1,1-12-12A12,12,0,0,1,128,156Z"/></svg>
+        </span>
+        <h3>Marking you can argue with</h3>
+        <p>Every answer comes back with the reason, the rule, and where the marks went. When the AI is unsure it says so, and points you to the official marking scheme instead of guessing.</p>
+      </div>
+      <div class="value-card clay-card reveal">
+        <span class="value-icon i2" aria-hidden="true">
+          <svg viewBox="0 0 256 256" fill="currentColor"><path d="M176,88h-8V72a40,40,0,0,0-80,0v16H80a16,16,0,0,0-16,16v96a16,16,0,0,0,16,16h96a16,16,0,0,0,16-16V104A16,16,0,0,0,176,88ZM104,72a24,24,0,0,1,48,0v16H104Zm40,64a8,8,0,0,1-8,8H120a8,8,0,0,1,0-16h24a8,8,0,0,1,8,8Z"/></svg>
+        </span>
+        <h3>Fits the way you already study</h3>
+        <p>Your plan, your weak topics, and your marking all work on the free tier, on any phone with a browser. Lessons and drills are built light, so they load fast on everyday mobile data.</p>
+      </div>
+      <div class="value-card clay-card reveal">
+        <span class="value-icon i3" aria-hidden="true">
+          <svg viewBox="0 0 256 256" fill="currentColor"><path d="M232,128a8,8,0,0,1-8,8H48l80.48,80.48a8,8,0,0,1-11.32,11.32l-96-96a8,8,0,0,1,0-11.32l96-96a8,8,0,0,1,11.32,11.32L48,120H224A8,8,0,0,1,232,128Z"/></svg>
+        </span>
+        <h3>Papers from 2014 to 2025</h3>
+        <p>Nine WASSCE subjects, every year, worked solutions included. Sitting a nursing entrance test or a semester quiz instead? Photograph your past paper and Quiz Gm rebuilds it as practice.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot container">
+  <p>© 2026 quiz.gm · Built for exam students in The Gambia <svg class="gm-flag" viewBox="0 0 27 18" role="img" aria-label="Flag of The Gambia"><path fill="#fff" d="M0 0h27v18H0z"/><path fill="#ce1126" d="M0 0h27v6H0z"/><path fill="#0c1c8c" d="M0 7h27v4H0z"/><path fill="#3a7728" d="M0 12h27v6H0z"/></svg></p>
+  <p class="links"><a href="/legal.html?doc=privacy">Privacy Policy</a> · <a href="/legal.html?doc=terms">Terms of Service</a></p>
+</footer>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  els.forEach(function (el, i) {
+    el.style.transitionDelay = Math.min(i * 90, 270) + 'ms';
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>

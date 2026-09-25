@@ -1,0 +1,22 @@
+.qm-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s ease-out, transform .5s ease-out;
+}
+.qm-reveal.qm-in { opacity: 1; transform: none; }
+
+.features-grid > :nth-child(2), .exams-grid > :nth-child(2), .steps-grid > :nth-child(2), .stats-row > :nth-child(2), .subjects-row > :nth-child(2) { transition-delay: 70ms; }
+.features-grid > :nth-child(3), .exams-grid > :nth-child(3), .steps-grid > :nth-child(3), .stats-row > :nth-child(3), .subjects-row > :nth-child(3) { transition-delay: 140ms; }
+.features-grid > :nth-child(4), .exams-grid > :nth-child(4), .steps-grid > :nth-child(4), .stats-row > :nth-child(4), .subjects-row > :nth-child(4) { transition-delay: 210ms; }
+.features-grid > :nth-child(5), .exams-grid > :nth-child(5), .steps-grid > :nth-child(5), .stats-row > :nth-child(5), .subjects-row > :nth-child(5) { transition-delay: 280ms; }
+.features-grid > :nth-child(6), .exams-grid > :nth-child(6), .steps-grid > :nth-child(6), .stats-row > :nth-child(6), .subjects-row > :nth-child(6) { transition-delay: 350ms; }
+.subjects-row > :nth-child(n+7) { transition-delay: 350ms; } @keyframes qm-float { from { translate: 0 0; } to { translate: 0 -6px; } }
+.float-badge { animation: qm-float 6s ease-in-out infinite alternate; }
+.fb-1 { animation-delay: 0s; }
+.fb-2 { animation-delay: -2s; }
+.fb-3 { animation-delay: -4s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .qm-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .float-badge { animation: none !important; translate: none !important; }
+}

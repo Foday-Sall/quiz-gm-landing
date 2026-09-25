@@ -1,0 +1,20 @@
+:root{
+  --primary:#4F46E5; --secondary:#818CF8; --accent:#EA580C;
+  --background:#EEF2FF; --foreground:#1E1B4B; --card:#FFFFFF;
+  --muted:#EBEEF8; --muted-fg:#475569; --border:#C7D2FE;
+  --success:#16A34A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Baloo 2',system-ui,sans-serif;background:var(--background);color:var(--foreground);line-height:1.65;font-size:16px;overflow-x:hidden}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+.nav{background:var(--card);border-bottom:3px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:0 4px 14px rgba(79,70,229,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--foreground);text-decoration:none}
+.logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:grid;place-items:center;color:#fff}
+.logo-mark svg{width:20px;height:20px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:2px solid var(--border);color:var(--primary);font-weight:600;font-family:inherit;font-size:15px;padding:8px 16px;border-radius:999px;cursor:pointer;text-decoration:none;box-shadow:0 3px 0 var(--border);transition:transform .15s ease,box-shadow .15s ease}
+.back-btn:hover{transform:translateY(-1px);box-shadow:0 4px 0 var(--border)}
+.back-btn:active{transform:translateY(1px);box-shadow:0 1px 0 var(--border)}
+.foot{text-align:center;color:var(--muted-fg);font-size:14px;padding:10px 0 44px}
+.foot a{color:var(--primary);font-weight:600;text-decoration:none}
+.clay-card{background:var(--card);border:2px solid var(--border);border-radius:24px;box-shadow:0 10px 30px rgba(30,27,75,.06)}

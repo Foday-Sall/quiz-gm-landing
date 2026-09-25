@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | Quiz Gm</title>
+<meta name="description" content="Quiz Gm privacy policy: what we collect, why, and what you control. We never sell your personal data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/pages.css">
+<style>
+.doc{padding:40px 0 72px}
+.doc-header{text-align:center;margin-bottom:32px}
+.doc-header h1{font-size:clamp(28px,5vw,40px);line-height:1.2;margin-bottom:8px}
+.doc-header .updated{color:var(--muted-fg);font-size:15px}
+.doc-card{background:var(--card);border:2px solid var(--border);border-radius:24px;padding:36px clamp(20px,4vw,48px);box-shadow:0 10px 30px rgba(30,27,75,.06)}
+.doc-card h2{font-size:21px;margin:28px 0 10px;color:var(--primary)}
+.doc-card h2:first-child{margin-top:0}
+.doc-card p,.doc-card li{color:var(--muted-fg);font-size:16px}
+.doc-card ul,.doc-card ol{padding-left:22px;margin:8px 0}
+.doc-card li{margin-bottom:6px}
+.doc-card strong{color:var(--foreground)}
+.doc-card a{color:var(--primary);font-weight:600}
+.doc-card hr{border:none;border-top:2px dashed var(--border);margin:28px 0}
+.md-content>*:first-child{margin-top:0}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="/">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,42.34l-64-64A8,8,0,0,0,144,-24H56A16,16,0,0,0,40,-8V24H32a8,8,0,0,0,0,16h8v16H32a8,8,0,0,0,0,16h8v16H32a8,8,0,0,0,0,16h8v16H32a8,8,0,0,0,0,16h8v32a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V48A8,8,0,0,0,213.66,42.34Z" opacity="0.2"/><path d="M248,88a56.06,56.06,0,0,0-56-56H168V24a8,8,0,0,0-16,0v8H104a8,8,0,0,0,0,16h48V72H80a8,8,0,0,0,0,16h96a40,40,0,0,1,40,40v64a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V120a8,8,0,0,0-16,0v56a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V168a8,8,0,0,0,16,0V144h0Z"/></svg>
+      </span>
+      Quiz Gm
+    </a>
+    <a class="back-btn" href="/">Back to Quiz</a>
+  </div>
+</header>
+
+<main class="doc container">
+  <div class="doc-header">
+    <h1 id="doc-title">Privacy Policy</h1>
+    <p class="updated" id="doc-updated"></p>
+  </div>
+  <article class="doc-card md-content" id="doc-content" aria-live="polite">
+    <p>Loading document…</p>
+  </article>
+</main>
+
+<footer class="foot container">
+  <p>Read also: <a href="/terms.html" id="alt-link">Terms of Service</a> · <a href="/">quiz.gm</a></p>
+</footer>
+
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var isTerms = location.pathname.indexOf('terms') > -1 || params.get('doc') === 'terms';
+  var src = isTerms ? '/terms.md' : '/privacy.md';
+  if (isTerms) {
+    document.getElementById('doc-title').textContent = 'Terms of Service';
+    document.title = 'Terms of Service | Quiz Gm';
+    var alt = document.getElementById('alt-link');
+    alt.textContent = 'Privacy Policy'; alt.href = '/privacy.html';
+  }
+  var contentEl = document.getElementById('doc-content');
+  var updatedEl = document.getElementById('doc-updated');
+
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function inline(s){
+    // JS-XSS-001: escape first, then add formatting; only safe URL schemes in links
+    var t = esc(s);
+    t = t.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+      .replace(/\*([^*]+)\*/g,'<em>$1</em>')
+      .replace(/`([^`]+)`/g,'<code>$1</code>');
+    t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function(m, label, url){
+      var safe = /^(https?:|mailto:|\/#|\/$)/i.test(url) ? url : '#';
+      return '<a href="' + safe + '">' + label + '</a>';
+    });
+    return t;
+  }
+  function md2html(md){
+    var out=[], inList=false, inOl=false;
+    md.split(/\n/).forEach(function(raw){
+      var line=raw.trim();
+      var h=line.match(/^(#{1,4})\s+(.*)/);
+      var liUl=line.match(/^[-*]\s+(.*)/);
+      var liOl=line.match(/^(\d+)\.\s+(.*)/);
+      var isHr=/^(-{3,}|\*{3,})$/.test(line);
+      if(isHr){ if(inList){out.push(inOl?'</ol>':'</ul>');inList=false;} out.push('<hr>'); return; }
+      if(h){
+        if(inList){out.push(inOl?'</ol>':'</ul>');inList=false;}
+        var lvl=h[1].length+1; out.push('<h'+lvl+'>'+inline(h[2])+'</h'+lvl+'>'); return;
+      }
+      if(liUl){
+        if(inList&&inOl){out.push('</ol>');inOl=false;}
+        if(!inList){out.push('<ul>');inList=true;}
+        out.push('<li>'+inline(liUl[1])+'</li>'); return;
+      }
+      if(liOl){
+        if(inList&&!inOl){out.push('</ul>');}
+        if(!inList){out.push('<ol>');inList=true;inOl=true;}
+        out.push('<li>'+inline(liOl[2])+'</li>'); return;
+      }
+      if(!line){
+        if(inList){out.push(inOl?'</ol>':'</ul>');inList=false;}
+        return;
+      }
+      if(inList){out.push(inOl?'</ol>':'</ul>');inList=false;}
+      out.push('<p>'+inline(line)+'</p>');
+    });
+    if(inList) out.push(inOl?'</ol>':'</ul>');
+    return out.join('\n');
+  }
+
+  fetch(src)
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.text(); })
+    .then(function(md){
+      var m = md.match(/last updated:\s*([A-Za-z]+ \d+, \d{4})/i);
+      if(m) updatedEl.textContent = 'Last updated: ' + m[1];
+      contentEl.innerHTML = md2html(md);
+    })
+    .catch(function(){
+      contentEl.innerHTML = '<p>Could not load this document. Please try again or contact <strong>support@quiz.gm</strong>.</p>';
+    });
+})();
+</script>
+</body>
+</html>
